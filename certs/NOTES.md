@@ -6,6 +6,9 @@ Purpose
 Templates
 - `localhost.pem.template` and `localhost-key.pem.template` are simple templates you can edit and swap in by removing the `.template` suffix after generating the real files.
 
+Dev server behavior
+- The dev server will attempt to use `certs/localhost.pem` and `certs/localhost-key.pem` for HTTPS. If these files are missing, Vite will start in HTTP mode and print a warning. Generate certs with `mkcert` to enable HTTPS locally.
+
 Preferred local generation (mkcert)
 1. Install mkcert (https://github.com/FiloSottile/mkcert)
 2. Generate certs in this folder:
