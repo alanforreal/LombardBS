@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Scissors, Menu, X, Phone } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { SITE } from "@/config/site";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,12 +24,12 @@ const Header = () => {
         <div className="container mx-auto px-4 py-2 flex justify-between items-center text-sm">
           <div className="flex items-center gap-2">
             <Phone className="h-4 w-4 text-accent" />
-            <a href="tel:+16308479999" className="hover:text-accent transition-colors">
-              (630) 847-9999
+            <a href={`tel:${SITE.phoneTel}`} className="hover:text-accent transition-colors">
+              {SITE.phoneDisplay}
             </a>
           </div>
           <span className="hidden sm:block text-primary-foreground/80">
-            1212 S Garfield St, Lombard, IL 60148
+            {SITE.addressLine1}, {SITE.city}
           </span>
         </div>
       </div>
@@ -42,7 +43,7 @@ const Header = () => {
               <Scissors className="h-6 w-6 text-accent-foreground" />
             </div>
             <div>
-              <h1 className="font-serif text-xl font-bold tracking-wide">Lombard Barbershop</h1>
+              <h1 className="font-serif text-xl font-bold tracking-wide">{SITE.name}</h1>
               <p className="text-xs text-primary-foreground/70 tracking-widest uppercase">For Men</p>
             </div>
           </Link>
